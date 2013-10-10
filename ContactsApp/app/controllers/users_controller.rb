@@ -25,6 +25,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorite
+    @favorites = Contact.where(:user_id => params[:id], :favorite => true)
+    render :json => @favorites
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])

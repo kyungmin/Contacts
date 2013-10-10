@@ -8,9 +8,13 @@ class User < ActiveRecord::Base
               :foreign_key => :user_id
 
   has_many    :contact_shares,
-              :class_name => "ContactShares",
+              :class_name => "ContactShare",
               :primary_key => :id,
               :foreign_key => :user_id,
               :dependent => :destroy
 
+  has_many    :contact_groups,
+              :class_name => "ContactGroup",
+              :primary_key => :id,
+              :foreign_key => :user_id
 end

@@ -1,6 +1,9 @@
 ContactsApp::Application.routes.draw do
 
   resources :users do
+    member do
+      get 'favorite'
+    end
     resources :contacts, :only => [:index, :show, :update, :create, :destroy]
   end
   resources :contact_shares, :only => [:create, :destroy]

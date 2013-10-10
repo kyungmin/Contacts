@@ -117,10 +117,19 @@ require 'rest-client'
 # puts RestClient.delete(url).body
 
 #Index
+# url = Addressable::URI.new(
+#   scheme: 'http',
+#   host: 'localhost',
+#   port: 3000,
+#   path: '/users/2/contacts.html'
+# ).to_s
+# puts RestClient.get(url)
+
+
 url = Addressable::URI.new(
   scheme: 'http',
   host: 'localhost',
   port: 3000,
-  path: '/users/2/contacts.html'
+  path: '/users/1/favorite'
 ).to_s
 puts RestClient.get(url)
